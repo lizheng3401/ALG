@@ -45,43 +45,63 @@ char func(char a){
     }
 }
 
-int cmp(const void *a, const void *b)
-{
-    string sa = *(string *)a;
-    string sb = *(string *)b;
-    return strcmp(sa.c_str(), sb.c_str()); 
-}
+int cmp(const void *a, const void *b);
 
 int main(){
     int num_case = 0;
     int tag = 0;
-    int len = 0;
+    size_t  len = 0;
     char str[20];
     cin >> num_case;
-    string list[num_case];
+    char list[num_case][7];
     for(int i = 0; i < num_case; ++i)
     {
-        string s = "";
         cin >> str;
         len = strlen(str); 
-        for(int j = 0; j < len; j++)
+        for(int j = 0, k = 0; j < len; j++)
         {
             if( (str[j] >= 'A' && str[j] <= 'Z') | (str[j] >= '0' && str[j] <= '9'))
             {
-                s += func(str[j]);
+                list[i][k++]= func(str[j]);
             }
-        }  
-        list[i] = s;
-    }
-
-    sort(list, list+num_case);  
-
-    for (int l = 0; l < num_case; ++l)
-    {
-        if(list[l] == list[ l+1 ])
-        {
-
         }
     }
+
+//    sort(list, list+num_case);
+//    for (int m = 0; m < num_case; ++m) {
+//        for (int i = 0; i < 7; ++i) {
+//            cout << list[m][i];
+//        }
+//        cout << endl;
+//    }
+    qsort(list, num_case, sizeof(list[0]), cmp);
+    int temp = 0;
+    for (int l = 0; l < num_case; ++l)
+    {
+        temp++;
+        if((list[l] != list[ l+1 ]))
+        {
+            if(temp > 1)
+            {
+                tag = 1;
+                for (int i = 0; i < 7; ++i) {
+                    cout << list[l][i];
+                    if (i == 2) {
+                        cout << "-";
+                    }
+                }
+                cout << " " << temp << endl;
+            }
+            temp = 0;
+        }
+    }
+    if(tag == 0){
+        cout << "No duplicates." ;
+    }
     return 0;
+}
+
+int cmp(const void *a, const void *b)
+{
+    return strcmp(*(char **)a, *(char **)b);
 }
