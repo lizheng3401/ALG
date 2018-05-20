@@ -19,13 +19,9 @@ int cmp(const void *a,const void *b)
 
 int main()
 {
-    int num_case = 3;
-    string list[3];
-    list[0] = "1234";
-    list[1] = "2314";
-    list[2] = "1123";
-    qsort(list, num_case, sizeof(list[0]), cmp);
-    for (int i = 0; i < 3; ++i) {
-        cout << list[i];
+    int i = 2;
+    while(i > 0){
+        cout << i <<endl;
+        i--;
     }
 }
