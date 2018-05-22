@@ -29,7 +29,7 @@ int main(){
     cin >> num_case;
     T t[num_case];
     for (int i = 0; i < num_case; ++i) {
-        scanf("%d. %s %d", &Hday, &month, &Hyear);
+        scanf("%d. %s %d", &Hday, month, &Hyear);
         Hmonth = getMonth(month);
         date = Hyear*365+Hmonth*20+Hday;
         Tyear = date / 260;
