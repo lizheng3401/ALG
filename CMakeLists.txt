@@ -19,6 +19,10 @@ add_executable(1007 1007.cpp)
 
 add_executable(1008 1008.cpp)
 
+add_executable(1009 1009.cpp)
+
+add_executable(1010 1010.cpp)
+
 add_executable(1503 1503.cpp)
 
 add_executable(3980 3980.cpp)

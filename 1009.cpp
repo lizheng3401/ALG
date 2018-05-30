@@ -14,7 +14,7 @@ int width,cntp,tot;
 
 int cmp(pix x,pix y)//排序比较函数，最后以pos升序排序
 {
-    return x.pos<y.pos;
+    return x.pos < y.pos;
 }
 inline int abs(int x)//cmath库里其实有abs函数，这里无聊写了一个
 {
@@ -66,26 +66,25 @@ int main()
        
        
        
-        int pos=1,k=0;//pos从1开始标号
-        for (int p=0;p<=cntp;p++)//枚举每一个连续段
+        int pos=1,k=0; //pos从1开始标号
+        for (int p=0;p<=cntp;p++) //枚举每一个连续段
         {   
            
             int row=(pos-1)/width;
             int col=(pos-1)%width;
-           
-           
+
             for (int i=row-1;i<=row+1;i++)
                 for (int j=col-1;j<=col+1;j++)
                 {
-                    int tpos=i*width+j;//这里算出来的tpos其实是tpos的标号减一
+                    int tpos=i*width+j;                     //这里算出来的tpos其实是tpos的标号减一
                     if (i<0 || j<0 || j>=width || tpos>=tot)
-                        continue;//tpos在map的外面了
+                        continue;                           //tpos在map的外面了
                        
                     outmap[k].pos=tpos+1;
-                    outmap[k++].code=getcode(tpos+1);//答案存入outmap   
+                    outmap[k++].code=getcode(tpos+1);       //答案存入outmap
                 }
                
-            pos+=inmap[p][1];//跳跃到下一个连续段的起始格
+            pos += inmap[p][1];                             //跳跃到下一个连续段的起始格
         }
        
        
