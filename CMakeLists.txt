@@ -5,28 +5,33 @@ set(CMAKE_CXX_STANDARD 11)
 
 add_executable(POJ main.cpp)
 
-add_executable(1002 1002.cpp)
+add_executable(1002 poj/1002.cpp)
 
-add_executable(1003 1003.cpp)
+add_executable(1003 poj/1003.cpp)
 
-add_executable(1004 1004.cpp)
+add_executable(1004 poj/1004.cpp)
 
-add_executable(1005 1005.cpp)
+add_executable(1005 poj/1005.cpp)
 
-add_executable(1006 1006.cpp)
+add_executable(1006 poj/1006.cpp)
 
-add_executable(1007 1007.cpp)
+add_executable(1007 poj/1007.cpp)
 
-add_executable(1008 1008.cpp)
+add_executable(1008 poj/1008.cpp)
 
-add_executable(1009 1009.cpp)
+add_executable(1009 poj/1009.cpp)
 
-add_executable(1010 1010.cpp)
+add_executable(1010 poj/1010.cpp)
 
-add_executable(1503 1503.cpp)
+add_executable(1328 poj/1328.cpp)
 
-add_executable(3980 3980.cpp)
+add_executable(1503 poj/1503.cpp)
 
-add_executable(2521 2521.cpp)
+add_executable(3980 poj/3980.cpp)
 
-add_executable(3086 3086.cpp)
+add_executable(2521 poj/2521.cpp)
+
+add_executable(3086 poj/3086.cpp)
+
+
+add_executable(sjtu1002 sjtu/1002.cpp)
