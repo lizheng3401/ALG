@@ -20,79 +20,56 @@ int main()
     char point[4] = {'r', 'd', 'l', 'u'};
     for (int i = 0; i < 4; i++)
     {
-        cout<<point[i]<<endl;
         switch(point[i])
         {
-            case 'u':
-                while(x >= 0)
+            case 'r':
+                while(mountain[x][y] == 0 && y < n)
                 {
-                    if(mountain[x - 1][y] == 0)
-                    {   
-                        mountain[x--][y] = pd++;
-                        if(pd - 1 == n*n)
-                        {
-                            goto p;
-                        }
-                    }else{
-                        x--;
-                        break;
+                    mountain[x][y++] = pd++;
+                    if(pd > n*n )
+                    {
+                        goto p;
                     }
                 }
+                --y;
+                ++x;
                 break;
             case 'd':
-                while(x < 4)
+                while(mountain[x][y] == 0 && x < n)
                 {
-                    if(mountain[x+1][y] == 0)
-                    {   
-                        mountain[x++][y] = pd++;
-                        if(pd - 1 == n*n)
-                        {
-                            goto p;
-                        }
-                    }else{
-                        x++;
-                        break;
+                    mountain[x++][y] = pd++;
+                    if(pd > n*n )
+                    {
+                        goto p;
                     }
                 }
-                
+                --x;
+                --y;
                 break;
             case 'l':
-                while(y >= 0)
+                while(mountain[x][y] == 0 && y >= 0)
                 {
-                    if(mountain[x][y-1] == 0)
-                    {   
-                        mountain[x][y--] = pd++;
-                        if(pd - 1 == n*n)
-                        {
-                            goto p;
-                        }
-                    }else{
-                        y--;
-                        break;
+                    mountain[x][y--] = pd++;
+                    if(pd > n*n )
+                    {
+                        goto p;
                     }
                 }
-                
+                --x;
+                ++y;
                 break;
-            case 'r':
-                while(y < 4)
+            case 'u':
+                while(mountain[x][y] == 0 && x >= 0)
                 {
-                    if(mountain[x][y+1] == 0)
-                    {   
-                        mountain[x][y++] = pd++;
-                        if(pd - 1 == n*n)
-                        {
-                            goto p;
-                        }
-                    }else{
-                        y++;
-                        break;
+                    mountain[x--][y] = pd++;
+                    if(pd > n*n )
+                    {
+                        goto p;
                     }
                 }
-                cout<<x<<","<<y<<endl;
-                break;
+                ++x;
+                ++y;
         }
-        if(pd == n*n)
-            break;
         if(i == 3)
             i = -1;
     }
