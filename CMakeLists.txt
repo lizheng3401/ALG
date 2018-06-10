@@ -40,6 +40,8 @@ add_executable(3086 poj/3086.cpp)
 
 add_executable(sjtu1002 sjtu/1002.cpp)
 
+add_executable(sjtu1003 sjtu/1003.cpp)
+
 add_executable(sjtu1004 sjtu/1004.cpp)
 
 add_executable(sjtu1010 sjtu/1010.cpp)
@@ -48,7 +50,11 @@ add_executable(sjtu1013 sjtu/1013.cpp)
 
 add_executable(sjtu1015 sjtu/1015.cpp)
 
+add_executable(sjtu1016 sjtu/1016.cpp)
+
 add_executable(sjtu1018 sjtu/1018.cpp)
+
+add_executable(sjtu1019 sjtu/1019.cpp)
 
 add_executable(sjtu1011 sjtu/1011.cpp)
 
