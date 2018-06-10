@@ -68,6 +68,10 @@ add_executable(sjtu1032 sjtu/1032.cpp)
 
 add_executable(sjtu1037 sjtu/1037.cpp)
 
+add_executable(sjtu1039 sjtu/1039.cpp)
+
 add_executable(sjtu1042 sjtu/1042.cpp)
+
+add_executable(sjtu1043 sjtu/1043.cpp)
 
 add_executable(sjtu1048 sjtu/1048.cpp)
