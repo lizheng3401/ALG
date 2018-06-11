@@ -44,6 +44,8 @@ add_executable(sjtu1003 sjtu/1003.cpp)
 
 add_executable(sjtu1004 sjtu/1004.cpp)
 
+add_executable(sjtu1005 sjtu/1005.cpp)
+
 add_executable(sjtu1010 sjtu/1010.cpp)
 
 add_executable(sjtu1013 sjtu/1013.cpp)
@@ -65,6 +67,8 @@ add_executable(sjtu1023 sjtu/1023.cpp)
 add_executable(sjtu1024 sjtu/1024.cpp)
 
 add_executable(sjtu1032 sjtu/1032.cpp)
+
+add_executable(sjtu1034 sjtu/1034.cpp)
 
 add_executable(sjtu1037 sjtu/1037.cpp)
 
