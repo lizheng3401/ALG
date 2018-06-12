@@ -38,7 +38,7 @@ add_executable(2521 poj/2521.cpp)
 add_executable(3086 poj/3086.cpp)
 
 
-add_executable(sjtu1002 sjtu/1002.cpp)
+add_executable(sjtu1002 sjtu/1002.cpp sjtu/1007.cpp sjtu/1014.cpp)
 
 add_executable(sjtu1003 sjtu/1003.cpp)
 
