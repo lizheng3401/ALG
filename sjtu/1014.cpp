@@ -40,6 +40,6 @@ int main()
 {
     char x[200], y[200];
     cin>>x>>y;
-//    add(x, y);
+    add(x, y);
     return 0;
 }
