@@ -18,7 +18,7 @@ void layer_order_tree(Node nodes[], int root)
     while(front != rear)
     {
         ++front;
-        cout<<queue[front];
+        cout<<queue[front]<<" ";
         if(nodes[queue[front]].left != -1)
         {
             ++rear;

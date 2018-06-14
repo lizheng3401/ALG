@@ -34,6 +34,25 @@ void layer_order_tree(int layers[], int i)
     }
 }
 
+void layer_tree(Node nodes[], int i, int length)
+{
+    int front = -1, rear = 0;
+    int queue[length];
+    queue[rear] = i;
+    while(front != rear)
+    {
+        ++front;
+        cout<<queue[front]<<" ";
+        if(nodes[queue[front]].leftChild)
+        {
+            for (int j = nodes[queue[front]].leftChild; j > 0 ; j = nodes[j].rightBrother) {
+                ++rear;
+                queue[rear] = j;
+            }
+        }
+    }
+}
+
 
 int main()
 {
@@ -54,6 +73,7 @@ int main()
     back_order_tree(nodes, layers[1]);
     cout<<endl;
     layer_order_tree(layers, n+1);
+    layer_tree(nodes, layers[1], n+1);
     return 0;
 }
 
