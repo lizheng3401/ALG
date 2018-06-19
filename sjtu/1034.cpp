@@ -1,47 +1,41 @@
 #include <iostream>
 #include <cstdio>
-#include <algorithm>
 
 using namespace std;
 
 int main()
 {
-    int N, K, value, minValue = 0, max = 0, max_temp;
-    cin>>N>>K;
-    long necklace[N];
-    for(int i = 0; i < N; ++i)
-    {
-        scanf("%ld", &necklace[i]);
+    int N, K, pd = 0, max = 0, min = -1;
+    cin >> N >> K;
+    int necklace[N];
+    for (int i = 0; i < N; ++i) {
+        scanf("%d", &necklace[i]);
     }
-    if(K == 1 | K == N)
+
+    for(int i = pd; i < N; ++i)
     {
-        for (int i = 0; i < N; ++i) {
-            if(max < necklace[i])
+        int temp_sum = 0, temp_max = 0;
+        for(int j = 0; j < K; ++j)
+        {
+            temp_sum += necklace[(i+j) % N ];
+            if(temp_max < necklace[ (i+j) % N])
             {
-                max = necklace[i];
+                temp_max = necklace[ (i+j) % N];
             }
         }
-        cout<<necklace[N - 1];
-        return 0;
-    }
-    for(int i = 0; i < N; ++i)
-    {
-        max_temp = 0;
-        value = 0;
-        for(int j = i, k = 0; k < K; j = (j+1)%N, ++k)
+        if(min > temp_sum || min == -1)
         {
-            value += necklace[j];
-            if(max_temp < necklace[j])
+            min = temp_sum;
+            max = temp_max;
+        }
+        if( min == temp_sum)
+        {
+            if(max < temp_max)
             {
-                max_temp = necklace[j];
+                max = temp_max;
             }
         }
-        if(minValue > value || minValue == 0)
-        {
-            minValue = value;
-            max = max_temp;
-        }
     }
-    cout<<max<<endl;
+    printf("%d\n", max);
     return 0;
 }
