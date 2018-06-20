@@ -1,10 +1,6 @@
-#include <vector>
-#include <iostream>
-#include <cstdio>
-#include <cstring>
+#include <string>
 #include <algorithm>
-
-using namespace std;
+#include <iostream>
 
 string reverseWords(string s) {
     string S, temp;
@@ -12,8 +8,17 @@ string reverseWords(string s) {
     {
         if(s[i] == ' ' || i == s.size() - 1)
         {
-            reverse(temp.begin(), temp.end());
-            S += temp+" ";
+            if(i != s.size() - 1)
+            {
+                reverse(temp.begin(), temp.end());
+                S += temp+" ";
+            }
+            else
+            {
+                temp = temp+s[i];
+                reverse(temp.begin(), temp.end());
+                S += temp;
+            }
             temp = "";
             continue;
         }
@@ -24,8 +29,6 @@ string reverseWords(string s) {
 
 int main()
 {
-
     cout << reverseWords("Let's take LeetCode contest");
     return 0;
-
 }

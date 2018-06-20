@@ -5,7 +5,7 @@ set(CMAKE_CXX_STANDARD 11)
 
 add_executable(POJ main.cpp)
 
-add_executable(1001 poj/1001.cpp leetcode/2.cpp leetcode/3.cpp)
+add_executable(1001 poj/1001.cpp)
 
 add_executable(1002 poj/1002.cpp)
 
