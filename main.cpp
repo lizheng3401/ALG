@@ -1,31 +1,43 @@
 #include <vector>
-#include <iostream>
-#include <cstdio>
-#include <cstring>
-#include <algorithm>
 
 using namespace std;
 
-string reverseWords(string s) {
-    string S, temp;
-    for(int i = 0; i < s.size(); ++i)
+vector<vector<int>> generate(int numRows) {
+    vector<vector<int>> re;
+    if(numRows == 1)
     {
-        if(s[i] == ' ' || i == s.size() - 1)
-        {
-            reverse(temp.begin(), temp.end());
-            S += temp+" ";
-            temp = "";
-            continue;
-        }
-        temp += s[i];
+        vector<int> temp;
+        temp.push_back(1);
+        re.push_back(temp);
+        return re;
     }
-    return S;
+    int left = 0, right = 0;
+    for(int r = 1; r < numRows; ++r)
+    {
+        vector<int> temp;
+        if(r == 1)
+        {
+            temp.push_back(1);
+            re.push_back(temp);
+        }else{
+            for(int i = 0; i < r; ++i)
+            {
+                if( i == 0)
+                {
+                    temp.push_back(1);
+                }else if(i == r - 1){
+                    temp.push_back(1);
+                }else{
+                    temp.push_back(re[r - 2][i-1] + re[r - 2][i]);
+                }
+            }
+            re.push_back(temp);
+        }
+    }
+    return re;
 }
 
 int main()
 {
-
-    cout << reverseWords("Let's take LeetCode contest");
-    return 0;
-
+    generate(5);
 }
